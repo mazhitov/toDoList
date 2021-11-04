@@ -1,6 +1,9 @@
 <div class="container">
-  <form>
-    <input placeholder="Add new task">
-    <button type="submit">Add</button>
+  <form (submit)="addNewTask($event)">
+    <input placeholder="Add new task" name="taskMessage" [(ngModel)]="taskMessage">
+    <button type="submit" [disabled]="taskMessage === ''">Add</button>
   </form>
+  <app-task *ngFor="let task of tasks let i = index"
+    [taskMessage] = "task"
+  ></app-task>
 </div>
