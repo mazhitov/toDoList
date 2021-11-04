@@ -1,9 +1,16 @@
-<div class="container">
-  <form (submit)="addNewTask($event)">
-    <input placeholder="Add new task" name="taskMessage" [(ngModel)]="taskMessage">
-    <button type="submit" [disabled]="taskMessage === ''">Add</button>
+<div class="container col-8">
+  <h1 class="text-center">To Do List</h1>
+  <form class="row mt-4" (submit)="addNewTask($event)">
+    <div class="col-10">
+      <input name="taskMessage" id= "taskMessage" class="form-control" [(ngModel)]="taskMessage" placeholder="Add new task">
+    </div>
+    <div class="col-2">
+      <button type="submit" class="d-block btn btn-primary mb-3 " [disabled]="taskMessage === ''">Add</button>
+    </div>
   </form>
   <app-task *ngFor="let task of tasks let i = index"
     [taskMessage] = "task"
+    (deleteTask)="onDeleteTask(i)"
   ></app-task>
 </div>
+
