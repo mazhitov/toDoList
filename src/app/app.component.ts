@@ -12,6 +12,7 @@ export class AppComponent {
   addNewTask(event: Event) {
     event.preventDefault();
     this.tasks.push(this.taskMessage);
+    this.taskMessage = '';
   }
   onDeleteTask (index:number) {
     this.tasks.splice(index, 1);
