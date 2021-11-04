@@ -17,4 +17,8 @@ export class AppComponent {
   onDeleteTask (index:number) {
     this.tasks.splice(index, 1);
   }
+  onChangeTask(index:number, newTaskMessage:string) {
+    this.tasks[index] = newTaskMessage;
+    console.log(this.tasks);
+  }
 }

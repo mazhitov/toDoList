@@ -1,4 +1,9 @@
 <div class="input-group mb-3">
-  <input name="taskMessage" class="form-control" [value]="taskMessage">
+  <input
+    [value]="taskMessage"
+    name="taskMessage"
+    class="form-control"
+    (input)="taskMessageInput($event)"
+  >
   <span class="input-group-text" style="cursor: pointer" (click)="onClickDelete()"><i class="bi bi-trash"></i></span>
 </div>

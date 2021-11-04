@@ -8,8 +8,12 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
 export class TaskComponent {
   @Input() taskMessage = '';
   @Output() deleteTask = new EventEmitter();
-
+  @Output() changeTask = new EventEmitter<string>();
   onClickDelete() {
     this.deleteTask.emit();
+  }
+  taskMessageInput(event: Event) {
+    const target = <HTMLInputElement>event.target;
+    this.changeTask.emit(target.value);
   }
 }
