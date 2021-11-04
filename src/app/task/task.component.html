@@ -5,8 +5,9 @@
     [ngClass]="className()"
     (focusin)="onFocusOnInput()"
     (focusout)="onFocusOutInput()"
-    (input)="taskMessageInput($event)"
+    (change)="taskMessageInput($event)"
   >
   <span class="input-group-text"><input type="checkbox" [checked]="isChecked" (change)="onCheckboxChange()"></span>
   <span class="input-group-text" style="cursor: pointer" (click)="onClickDelete()"><i class="bi bi-trash"></i></span>
 </div>
+

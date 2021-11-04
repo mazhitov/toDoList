@@ -19,6 +19,5 @@ export class AppComponent {
   }
   onChangeTask(index:number, newTaskMessage:string) {
     this.tasks[index] = newTaskMessage;
-    console.log(this.tasks);
   }
 }
