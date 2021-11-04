@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'toDoList';
+  tasks = ['Buy milk', 'Walk with dog', 'do homework'];
 }
